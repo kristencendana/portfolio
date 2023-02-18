@@ -6,7 +6,7 @@ const App = () => {
 
 
 return (
-  <div>{'react setup from scratch without cra testing ts'}</div>
+  <div>{'react setup from scratch loaded'}</div>
 );
 
 }
