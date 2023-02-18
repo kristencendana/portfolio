@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
-  entry: './src/client/index.jsx',
+  entry: './src/client/index.tsx',
   devtool: 'inline-source-map',
   output: {
     path: path.join(__dirname, '/dist'),
@@ -19,10 +19,15 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel-loader'
       },
+      {
+        test: /\.(ts|tsx)$/i,
+        use: ['ts-loader'],
+        exclude: /node_modules/,
+      },        
     ]
   },
   resolve: {
-    extensions: ['.jsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   plugins:[
     new HtmlWebpackPlugin({
