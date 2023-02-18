@@ -1,11 +1,22 @@
 // Server routing
-const express = require('express');
+// const express = require('express');
+import express, { Express, Request, Response, NextFunction } from 'express';
+const path = require('path');
 const app = express();
 const port = 3000;
 app.use(express.json());
 
-app.use(express.static("./dist"));
 
+// app.use(express.static("./dist"));
+// console.log(path.join(__dirname, '../../index.html'));
+
+// serves the CSS and JS files
+// app.use(express.static(path.join(__dirname, '../.././public/styles.css')));
+
+// serving the HTML file
+app.get('/', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../../index.html'));
+});
 
 module.exports = app.listen(port, () => {
   console.log(`Server is listening at port https://localhost:${port}`);

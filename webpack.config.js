@@ -11,6 +11,10 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+    port: 5000,
+    open: true,
+    compress: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -18,6 +22,15 @@ module.exports = {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/i,
+        include: path.resolve(__dirname, 'public'),
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.svg$/,
+        use: ['file-loader'],
       },
       {
         test: /\.(ts|tsx)$/i,
