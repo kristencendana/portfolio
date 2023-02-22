@@ -10,10 +10,12 @@ return (
   <p className="text-3xl text-gray-700 font-bold mb-5">
     Welcome!
   </p>
-  <div className="bg-emerald-500 w-52 h-52"></div>
+  <div className="bg-emerald-500 w-52 h-52 rounded-full shadow-2xl"></div>
+  <div className="bg-emerald-500 w-52 h-52 rounded-full shadow-2xl"></div>
   <p className="text-gray-500 text-lg">
     React and Tailwind CSS in action
   </p>
+  <p>hello TEST</p>
   <h1 className="text-4xl text-blue-700">My Webpack + Tailwind App</h1>
   <div className="bg-emerald-500 w-52 h-52"></div>
 </div>
