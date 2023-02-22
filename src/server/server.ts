@@ -10,8 +10,9 @@ app.use(express.json());
 // app.use(express.static("./dist"));
 // console.log(path.join(__dirname, '../../index.html'));
 
-// serves the CSS and JS files
-// app.use(express.static(path.join(__dirname, '../.././public/styles.css')));
+// serves the CSS and JS files from dist folder
+app.use('/dist', express.static(path.join(__dirname, '../../dist')));
+// route handler to respond with main app
 
 // serving the HTML file
 app.get('/', (req, res) => {
